@@ -1,0 +1,7 @@
+# Retrieval settings for the offline demo corpus.
+# vector_weight is the share of the hybrid score that comes from the embedding.
+# The rest is BM25. The corpus is small, so lexical match carries most of the rank.
+
+top_k = 4
+vector_weight = 0.30
+embedding_dim = 384
