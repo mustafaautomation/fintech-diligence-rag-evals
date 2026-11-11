@@ -1,0 +1,23 @@
+# Offline thresholds are checked against this repository's snapshots.
+# They were set from the offline run recorded in docs/reports.
+# Live thresholds are starting points for a run that has OPENAI_API_KEY.
+# This repository does not commit live judge scores.
+
+[offline]
+numeric_accuracy = 1.0
+refusal_correctness = 1.0
+string_presence = 1.0
+trap_avoidance = 1.0
+hit_rate = 1.0
+mrr = 1.0
+non_llm_context_recall = 1.0
+# Neighboring statement sections share wording, so the string metric
+# sometimes marks an extra retrieved section as relevant. 0.90 is below
+# the measured improved score and above the broken retriever.
+non_llm_context_precision = 0.90
+
+[live]
+faithfulness = 0.70
+answer_relevancy = 0.70
+context_precision = 0.70
+context_recall = 0.70
